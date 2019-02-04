@@ -1,0 +1,32 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+=begin
+one:
+  name: MyString
+  email: MyString
+  password_digest: MyString
+  remember_digest: MyString
+  admin: false
+  activation_digest: MyString
+  activated: false
+  activated_at: 2019-02-01 10:06:55
+  reset_digest: MyString
+  reset_sent_at: 2019-02-01 10:06:55
+  total_score: 1
+  total_fee: 1
+  purcha_amount: 1
+
+two:
+  name: MyString
+  email: MyString
+  password_digest: MyString
+  remember_digest: MyString
+  admin: false
+  activation_digest: MyString
+  activated: false
+  activated_at: 2019-02-01 10:06:55
+  reset_digest: MyString
+  reset_sent_at: 2019-02-01 10:06:55
+  total_score: 1
+  total_fee: 1
+  purcha_amount: 1
+=end

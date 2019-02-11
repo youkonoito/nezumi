@@ -2,10 +2,23 @@
   <div>
     <%= link_to "ねずみのお家", root_path %>
     <nav>
-      <ul>
+      <ul class="uk-accordion">
         <li><%= link_to "ホーム", root_path %></li>
         <li><%= link_to "説明", help_path %></li>
-        <li><%= link_to "ログイン", login_path %></li>
+        <% if logged_in? %>
+          <li><%= link_to current_user.name, '#' %></li>
+            <ul>
+              <li><%= link_to "マイページ", current_user %></li>
+              <li><%= link_to "設定変更", '#' %></li>
+              <li><%= link_to "お気に入り", '#' %></li>
+              <li><%= link_to "フォロー", '#' %></li>
+              <li><%= link_to "フォロワー", '#' %></li>
+              <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+            </ul>
+          </li>
+        <% else %>
+          <li><%= link_to "ログイン", login_path %></li>
+        <% end %>
       </ul>
     </nav>
   </div>

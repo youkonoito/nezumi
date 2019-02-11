@@ -2,20 +2,20 @@
 <h1>新規登録</h1>
 
 <div class>
-    <%= form_for(@user, url: signup_path) do |f| %>
-      <%= render 'shared/error_messages', object: f.object %>
-      <%= f.label :name, "名前" %>
-      <%= f.text_field :name %>
+  <%= form_for(@user, url: signup_path) do |f| %>
+    <%= render 'shared/error_messages' %>
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name %>
 
-      <%= f.label :email, "メールアドレス" %>
-      <%= f.email_field :email %>
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email %>
 
-      <%= f.label :password, "パスワード" %>
-      <%= f.password_field :password %>
+    <%= f.label :password, "パスワード" %>
+    <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "確認のためもう一度パスワードを入力してください" %>
-      <%= f.password_field :password_confirmation %>
+    <%= f.label :password_confirmation, "確認のためもう一度パスワードを入力してください" %>
+    <%= f.password_field :password_confirmation %>
 
-      <%= f.submit "新規登録" %>
-    <% end %>
+    <%= f.submit "新規登録" %>
+  <% end %>
 </div>

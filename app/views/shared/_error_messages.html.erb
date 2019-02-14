@@ -1,7 +1,7 @@
 <% if object.errors.any? %>
   <div id="error_explanation">
     <div>
-      <%= object.errors.count %>つの訂正箇所があります。 
+      <%= object.errors.count %>件の訂正箇所があります。 
     </div>
     <ul>
     <% object.errors.full_messages.each do |msg| %>

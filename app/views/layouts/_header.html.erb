@@ -1,25 +1,34 @@
 <header>
-  <div>
-    <%= link_to "ねずみのお家", root_path %>
-    <nav>
-      <ul class="uk-accordion">
+  <nav class="uk-navbar-container" uk-navbar="mode: click">
+    
+    <div class="uk-navbar-left">
+      <%= link_to "ねずみのお家", root_path %>
+    </div>
+    
+    <div class="uk-navbar-right">
+      <ul class="uk-navbar-nav">
         <li><%= link_to "ホーム", root_path %></li>
         <li><%= link_to "説明", help_path %></li>
+        <li><%= link_to "ユーザー一覧", users_path %></li>
         <% if logged_in? %>
-          <li><%= link_to current_user.name, '#' %></li>
-            <ul>
-              <li><%= link_to "マイページ", current_user %></li>
-              <li><%= link_to "設定変更", '#' %></li>
-              <li><%= link_to "お気に入り", '#' %></li>
-              <li><%= link_to "フォロー", '#' %></li>
-              <li><%= link_to "フォロワー", '#' %></li>
-              <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
-            </ul>
+          <li>
+            <%= link_to current_user.name, '#' %>
+            <div class="uk-navbar-dropdown">
+              <ul class="uk-nav uk-navbar-dropdown-nav">
+                <li><%= link_to "マイページ", current_user %></li>
+                <li><%= link_to "設定変更", edit_user_path(current_user) %></li>
+                <li><%= link_to "お気に入り", '#' %></li>
+                <li><%= link_to "フォロー", '#' %></li>
+                <li><%= link_to "フォロワー", '#' %></li>
+                <li class="uk-nav-divider"></li>
+                <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
+              </ul>
+            </div>
           </li>
         <% else %>
           <li><%= link_to "ログイン", login_path %></li>
         <% end %>
       </ul>
-    </nav>
-  </div>
+    </div>
+  </nav>
 </header>

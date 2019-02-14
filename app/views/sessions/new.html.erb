@@ -5,10 +5,10 @@
   <%= form_for(:session, url: login_path) do |f| %>
 
     <%= f.label :email, "メールアドレス" %>
-    <%= f.email_field :email %>
+    <%= f.email_field :email, required: true %>
 
     <%= f.label :password, "パスワード" %>
-    <%= f.password_field :password %>
+    <%= f.password_field :password, required: true %>
     
     <%= f.label :remember_me do %>
         <%= f.check_box :remember_me %>

@@ -1,0 +1,9 @@
+<h1>ねずみのお家</h1>
+
+<p><%= @user.name %>様はじめまして！</p>
+
+<p>
+ご登録いただきありがとうございます！こちらのリンクをクリックして、アカウントを有効にしてください！
+</p>
+
+<%= link_to "有効にする", edit_account_activation_url(@user.activation_token, email: @user.email) %>

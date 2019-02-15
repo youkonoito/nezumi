@@ -9,7 +9,6 @@
       <ul class="uk-navbar-nav">
         <li><%= link_to "ホーム", root_path %></li>
         <li><%= link_to "説明", help_path %></li>
-        <li><%= link_to "ユーザー一覧", users_path %></li>
         <% if logged_in? %>
           <li>
             <%= link_to current_user.name, '#' %>
@@ -20,6 +19,7 @@
                 <li><%= link_to "お気に入り", '#' %></li>
                 <li><%= link_to "フォロー", '#' %></li>
                 <li><%= link_to "フォロワー", '#' %></li>
+                <li><%= link_to "ユーザー一覧", users_path %></li>
                 <li class="uk-nav-divider"></li>
                 <li><%= link_to "ログアウト", logout_path, method: :delete %></li>
               </ul>

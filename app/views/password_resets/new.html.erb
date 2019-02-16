@@ -1,0 +1,17 @@
+<% provide(:title, "パスワードの再設定") %>
+<h1>パスワードの再設定</h1>
+
+<p>
+  パスワードを思い出せない場合は、こちらに登録してある
+  メールアドレスを記入し、送信して下さい。
+  パスワードの再設定をいたします。
+</p>
+
+<div>
+  <%= form_for(:password_reset, url: password_resets_path) do |f| %>
+    <%= f.label :email, "メールアドレス" %>
+    <%= f.email_field :email, required: true %>
+
+    <%= f.submit "送信" %>
+  <% end %>
+</div>

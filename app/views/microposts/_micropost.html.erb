@@ -1,8 +1,8 @@
 <li id="micropost-<%= micropost.id %>">
   <span class="user"><%= link_to micropost.user.name, micropost.user %></span>
   <span class="content">
-    <%= link_to micropost_path(:id) do %>
-    <%= image_tag micropost.image.url if micropost.image? %>
+    <%= link_to micropost_path(micropost.id) do %>
+    <%= image_tag micropost.image.url %>
     <%= micropost.comment %>
     <% end %>
   </span>

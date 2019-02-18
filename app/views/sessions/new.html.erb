@@ -8,6 +8,7 @@
     <%= f.email_field :email, required: true %>
 
     <%= f.label :password, "パスワード" %>
+    <%= link_to "(パスワードを忘れた場合)", new_password_reset_path %>
     <%= f.password_field :password, required: true %>
     
     <%= f.label :remember_me do %>

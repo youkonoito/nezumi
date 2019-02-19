@@ -1,4 +1,17 @@
 <% provide(:title, @user.name) %>
-<h1>
-  <%= @user.name %>
-</h1>
+<div>
+  <aside>
+    <h1>
+      <%= @user.name %>
+    </h1>
+  </aside>
+  <div>
+    <% if @user.microposts.any? %>
+      <h3>投稿作品数(<%= @user.microposts.count %>)作品</h3>
+      <ol class="microposts">
+        <%= render @microposts %>
+      </ol>
+      <%= paginate @microposts %>
+    <% end %>
+  </div>
+</div>

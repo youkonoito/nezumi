@@ -17,3 +17,24 @@ User.create!(name:  "Example User",
                activated: true,
                activated_at: Time.zone.now)
 end
+
+users = User.order(:created_at).take(6)
+3.times do
+  image = open("#{Rails.root}/db/moru.jpg")
+  comment = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(image: image, comment: comment) }
+end
+
+users = User.order(:created_at).take(6)
+3.times do
+  image = open("#{Rails.root}/db/nobi.jpg")
+  comment = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(image: image, comment: comment) }
+end
+
+users = User.order(:created_at).take(6)
+3.times do
+  image = open("#{Rails.root}/db/hari.jpg")
+  comment = Faker::Lorem.sentence(5)
+  users.each { |user| user.microposts.create!(image: image, comment: comment) }
+end

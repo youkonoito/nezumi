@@ -1,5 +1,21 @@
-<div>
-  <h1>ねずみのお家</h1>
-  <%= link_to "新規登録", signup_path %>
-
-</div>
+<% if logged_in? %>
+  <div>
+    <aside>
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+    <div>
+      <h3>投稿作品</h3>
+      <%= render 'shared/feed' %>
+    </div>
+  </div>
+<% else %>
+  <div>
+    <h1>ねずみのお家</h1>
+    <%= link_to "新規登録", signup_path %>
+  </div>
+<% end %>

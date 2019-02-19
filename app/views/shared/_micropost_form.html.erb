@@ -1,0 +1,10 @@
+<%= form_for(@micropost) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div>
+    <%= f.file_field :image, accept: 'image/jpeg,image/gif,image/png' %>
+  </div>
+  <div>
+    <%= f.text_area :comment, placeholder: "画像を指定し、コメントを付けて下さい..." %>
+  </div>
+  <%= f.submit "投稿！" %>
+<% end %>

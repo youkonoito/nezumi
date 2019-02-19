@@ -8,8 +8,8 @@ class MicropostsController < ApplicationController
       flash[:success] = "画像が投稿されました!"
       redirect_to root_url
     else
-      @feed_items = []
-      redirect_to root_url
+      #@feed_items = []
+      render 'static_pages/home'
     end
   end
   
